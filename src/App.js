@@ -4,45 +4,26 @@ import { LoginScreen } from "./Screens/LoginScreen";
 import "./index.css";
 import { auth } from "./firebaseconfig";
 import { onAuthStateChanged } from "@firebase/auth";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Navbar } from "./Components/Navbar";
 
 function App() {
-  useEffect(() => {
-    const unsubsribe = onAuthStateChanged(auth, (userAuth) => {
-      if (userAuth) {
-        //Logged In
-        console.log(userAuth);
-      } else {
-        //Logged Out
-      }
-    });
-    return unsubsribe;
-  }, []);
-  const user = {
-    name: "rishi",
-  };
+  const user = null;
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <HomeScreen />,
+      element: <LoginScreen />,
     },
     {
-      path: "*",
-      element: <h1>404</h1>,
+      path: "/home",
+      element: <HomeScreen />,
     },
+    { errorElement: <h1>404</h1> },
   ]);
+
   return (
     <div className="App">
-      {!user ? (
-        <LoginScreen />
-      ) : (
-        <RouterProvider router={router}></RouterProvider>
-      )}
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
