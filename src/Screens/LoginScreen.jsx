@@ -1,9 +1,27 @@
 import React, { useState } from "react";
 import "./LoginScreen.css";
-
 import { NavLink } from "react-router-dom";
 import { HomeScreen } from "./HomeScreen";
+
 export const LoginScreen = () => {
+  const [email, setEmail] = useState(""); // State to track email input value
+
+  // Function to handle changes in the email input
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  // Function to check if the email input is filled
+  const isEmailFilled = email.trim() !== "";
+
+  // Function to handle the "GET STARTED" button click
+  const handleGetStartedClick = () => {
+    if (!isEmailFilled) {
+      // Display an alert if email is not filled
+      alert("Please enter your email address.");
+    }
+  };
+
   return (
     <div className="loginScreen">
       <div className="loginscreen_background">
@@ -25,9 +43,22 @@ export const LoginScreen = () => {
             </h3>
             <div className="loginscreen_input">
               <form>
-                <input required type="email" placeholder="Email Address" />
-                <NavLink to={"/home"}>
-                  <button className="button_started">GET STARTED</button>
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  required
+                  value={email}
+                  onChange={handleEmailChange} // Handle input changes
+                />
+                <NavLink to={isEmailFilled ? "/home" : ""}>
+                  {/* Disable the NavLink when email is not filled */}
+                  <button
+                    className="button_started"
+                    disabled={!isEmailFilled}
+                    onClick={handleGetStartedClick} // Handle button click
+                  >
+                    GET STARTED
+                  </button>
                 </NavLink>
               </form>
             </div>
