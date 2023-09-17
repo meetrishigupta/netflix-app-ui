@@ -15,7 +15,7 @@
 }
 
 .row_poster{
-    max-height: 200px;
+    max-height: 150px;
     object-fit: contain;
     margin-right: 20px;
     transition: transform 450ms;
@@ -27,5 +27,5 @@
     opacity: 1;
 }
 .row__posterLarge{
- max-height: 500px;
+ max-height: 300px;
 }
