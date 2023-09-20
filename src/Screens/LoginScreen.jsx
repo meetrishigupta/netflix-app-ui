@@ -45,7 +45,7 @@ export const LoginScreen = () => {
               <form>
                 <input
                   type="email"
-                  placeholder="Email Address"
+                  placeholder="Enter email address to go Homepage"
                   required
                   value={email}
                   onChange={handleEmailChange} // Handle input changes
