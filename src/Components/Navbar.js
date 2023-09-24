@@ -19,18 +19,18 @@ export const Navbar = () => {
   return (
     <div className={`nav ${show && "nav_black"}`}>
       <div className="nav-content">
-        <img href="#"
+        <img
+          href="#"
           className="nav-logo"
           src="https://www.edigitalagency.com.au/wp-content/uploads/netflix-logo-png-large.png"
           alt=""
         ></img>
-   
-          <img
-            className="avatar-logo"
-            src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-            alt=""
-          ></img>
 
+        <img
+          className="avatar-logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+          alt=""
+        ></img>
       </div>
     </div>
   );
