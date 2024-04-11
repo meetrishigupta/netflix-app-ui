@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./LoginScreen.css";
 import { NavLink } from "react-router-dom";
 import { HomeScreen } from "./HomeScreen";
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
 
 export const LoginScreen = () => {
   const [email, setEmail] = useState(""); // State to track email input value
@@ -54,6 +56,7 @@ export const LoginScreen = () => {
                   {/* Disable the NavLink when email is not filled */}
                   <button
                     className="button_started"
+                    id="button_click"
                     disabled={!isEmailFilled}
                     onClick={handleGetStartedClick} // Handle button click
                   >

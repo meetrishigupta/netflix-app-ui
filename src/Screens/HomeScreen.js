@@ -3,7 +3,10 @@ import "./HomeScreen.css";
 import { Banner } from "../Components/Banner";
 import requests from "../API/request";
 import { Row } from "../Components/row";
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
 import { Navbar } from "../Components/Navbar";
+
 export const HomeScreen = () => {
   return (
     <div className="homeScreen">
