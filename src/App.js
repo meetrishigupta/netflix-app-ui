@@ -1,14 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { HomeScreen } from "./Screens/HomeScreen";
 import { LoginScreen } from "./Screens/LoginScreen";
 import "./index.css";
-import { auth } from "./firebaseconfig";
-import { onAuthStateChanged } from "@firebase/auth";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Navbar } from "./Components/Navbar";
 
 function App() {
-  const user = null;
   const router = createBrowserRouter([
     {
       path: "/",

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./nav.css";
-import { NavLink } from "react-router-dom";
 export const Navbar = () => {
   const [show, handleshow] = useState(false);
   const transisitionforNavar = () => {

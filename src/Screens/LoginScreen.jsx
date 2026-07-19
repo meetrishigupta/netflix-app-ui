@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./LoginScreen.css";
 import { NavLink } from "react-router-dom";
-import { HomeScreen } from "./HomeScreen";
 
 export const LoginScreen = () => {
   const [email, setEmail] = useState(""); // State to track email input value
