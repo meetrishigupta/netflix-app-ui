@@ -6,15 +6,18 @@ export const Banner = () => {
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
-      const request = await axios.get(requests.fetchNetflixOriginals);
-      setMovie(
-        request.data.results[
-          Math.floor(Math.random() * request.data.results.length - 1)
-        ]
-      );
-      return request;
-    }
+    const fetchData = async () => {
+      const { data } = await axios.get(requests.fetchNetflixOriginals);
+
+      let randomMovie;
+      do {
+        const randomIndex = Math.floor(Math.random() * data.results.length);
+        randomMovie = data.results[randomIndex];
+      } while (randomMovie?.id === movie?.id && data.results.length > 1);
+
+      setMovie(randomMovie);
+    };
+
     fetchData();
   }, []);
 

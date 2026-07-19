@@ -26,7 +26,7 @@ export const LoginScreen = () => {
       <div className="loginscreen_background">
         <img
           className="loginscreen_logo"
-          src="https://www.edigitalagency.com.au/wp-content/uploads/netflix-logo-png-large.png"
+          src="/Logonetflix.png"
           alt="netflix"
         />
 
@@ -43,11 +43,12 @@ export const LoginScreen = () => {
             <div className="loginscreen_input">
               <form>
                 <input
+                  className="login_input"
                   type="email"
                   placeholder="Enter email address to go Homepage"
                   required
                   value={email}
-                  onChange={handleEmailChange} // Handle input changes
+                  onChange={handleEmailChange}
                 />
                 <NavLink to={isEmailFilled ? "/home" : ""}>
                   {/* Disable the NavLink when email is not filled */}

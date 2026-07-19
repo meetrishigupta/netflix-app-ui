@@ -21,7 +21,7 @@ export const Navbar = () => {
         <img
           href="#"
           className="nav-logo"
-          src="https://www.edigitalagency.com.au/wp-content/uploads/netflix-logo-png-large.png"
+          src="/Logonetflix.png"
           alt=""
         ></img>
 
